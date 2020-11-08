@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 
-export default function Movie({ year, title, summary, poster, genres }) {
+export default function Movie({ id, year, title, summary, poster, genres }) {
   return (
     <Link to={{
-      pathname: '/movie-detail',
+      pathname: `/movie/${id}`,
       state: {
         year,
         title,
@@ -32,6 +32,7 @@ export default function Movie({ year, title, summary, poster, genres }) {
 }
 
 Movie.propTypes = {
+  id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
