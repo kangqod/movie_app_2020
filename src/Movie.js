@@ -13,7 +13,7 @@ export default function Movie({ year, title, summary, medium_cover_image, genres
             <li key={`${idx}`} className="genres__genre">{genre}</li>
           ))}
         </ul>
-        <p className="movie__summary">{summary}</p>
+        <p className="movie__summary">{summary.slice(0, 140)}...</p>
       </div>
     </div>
   )
